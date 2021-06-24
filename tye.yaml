@@ -1,0 +1,27 @@
+# tye application configuration file
+# read all about it at https://github.com/dotnet/tye
+#
+# when you've given us a try, we'd love to know what you think:
+#    https://aka.ms/AA7q20u
+#
+name: tyedemo
+services:
+- name: tyedemo-web
+  project: src/TyeDemo.Web/TyeDemo.Web.csproj
+  bindings:
+  - port: 44312
+    protocol: https
+- name: tyedemo-identityserver
+  project: src/TyeDemo.IdentityServer/TyeDemo.IdentityServer.csproj
+  bindings:
+  - port: 44346
+    protocol: https
+- name: tyedemo-httpapi-host
+  project: src/TyeDemo.HttpApi.Host/TyeDemo.HttpApi.Host.csproj
+  bindings:
+  - port: 44354
+    protocol: https
+# - name: tyedemo-httpapi-client-consoletestapp
+#   project: test/TyeDemo.HttpApi.Client.ConsoleTestApp/TyeDemo.HttpApi.Client.ConsoleTestApp.csproj
+# - name: tyedemo-dbmigrator
+#   project: src/TyeDemo.DbMigrator/TyeDemo.DbMigrator.csproj
